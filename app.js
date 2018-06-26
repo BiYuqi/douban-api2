@@ -26,8 +26,8 @@ app.get('/movie/in_theaters', (req, res) => {
   const sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
   sreq.on('end', (err, res) => {
-    if (err) {
-      console.log(err)
+    if (error) {
+      console.log(error)
     }
     console.log(res)
   })
@@ -39,8 +39,8 @@ app.get('/movie/coming_soon', (req, res) => {
   var sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
   sreq.on('end', (error, res) => {
-    if (err) {
-      console.log(err)
+    if (error) {
+      console.log(error)
     }
     console.log(res)
   })
@@ -52,8 +52,60 @@ app.get('/movie/search', (req, res) => {
   var sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
   sreq.on('end', (error, res) => {
-    if (err) {
-      console.log(err)
+    if (error) {
+      console.log(error)
+    }
+    console.log(res)
+  })
+})
+/*
+* top250
+*/
+app.get('/movie/top250', (req, res) => {
+  var sreq = request.get(HOST + req.originalUrl)
+  sreq.pipe(res)
+  sreq.on('end', (error, res) => {
+    if (error) {
+      console.log(error)
+    }
+    console.log(res)
+  })
+})
+/*
+* 北美票房
+*/
+app.get('/movie/us_box', (req, res) => {
+  var sreq = request.get(HOST + req.originalUrl)
+  sreq.pipe(res)
+  sreq.on('end', (error, res) => {
+    if (error) {
+      console.log(error)
+    }
+    console.log(res)
+  })
+})
+/*
+* 电影条目剧照
+*/
+app.get('/movie/subject/:id/photos', (req, res) => {
+  var sreq = request.get(HOST + req.originalUrl)
+  sreq.pipe(res)
+  sreq.on('end', (error, res) => {
+    if (error) {
+      console.log(error)
+    }
+    console.log(res)
+  })
+})
+/*
+* 影人条目信息
+*/
+app.get('/movie/celebrity/:id', (req, res) => {
+  var sreq = request.get(HOST + req.originalUrl)
+  sreq.pipe(res)
+  sreq.on('end', (error, res) => {
+    if (error) {
+      console.log(error)
     }
     console.log(res)
   })
