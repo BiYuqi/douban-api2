@@ -1,0 +1,23 @@
+{
+  "name": "douban-api2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiYuqi/douban-api2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BiYuqi/douban-api2/issues"
+  },
+  "homepage": "https://github.com/BiYuqi/douban-api2#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "superagent": "^3.8.3"
+  }
+}
