@@ -75,6 +75,6 @@ app.get('/movie/celebrity/:id', (req, res) => {
   })
 })
 
-app.listen(8081, function () {
+app.listen(process.env.PORT || 8081, function () {
   console.log('HTTP Server is running in http://127.0.0.1:8081')
 })
