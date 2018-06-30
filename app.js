@@ -5,12 +5,13 @@ const app = express()
 const HOST = 'http://api.douban.com/v2'
 
 /**
-* CROS Support
-*/
+ * CORS support.
+ */
+
 app.all('*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild')
-  res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUt, OPTIONS')
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS')
 
   if (req.method === 'OPTIONS') {
     res.send(200)
@@ -18,70 +19,37 @@ app.all('*', (req, res, next) => {
     next()
   }
 })
-
 /*
-* 正在热映
+* type
 */
-app.get('/movie/in_theaters', (req, res) => {
-  const sreq = request.get(HOST + req.originalUrl)
-  sreq.pipe(res)
-  sreq.on('end', (err, res) => {
-    if (error) {
-      console.log(error)
-    }
-    console.log(res)
-  })
-})
-/*
-* 即将上映
-*/
-app.get('/movie/coming_soon', (req, res) => {
+app.get('/movie/:type', (req, res) => {
   var sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
   sreq.on('end', (error, res) => {
-    if (error) {
-      console.log(error)
-    }
-    console.log(res)
+    if (error) {}
+    console.log('end')
   })
 })
 /*
-* 搜索
+* search
 */
 app.get('/movie/search', (req, res) => {
   var sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
   sreq.on('end', (error, res) => {
-    if (error) {
-      console.log(error)
-    }
-    console.log(res)
+    if (error) {}
+    console.log('end')
   })
 })
 /*
-* top250
+* detail
 */
-app.get('/movie/top250', (req, res) => {
+app.get('/movie/subject/:id', function (req, res) {
   var sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
-  sreq.on('end', (error, res) => {
-    if (error) {
-      console.log(error)
-    }
-    console.log(res)
-  })
-})
-/*
-* 北美票房
-*/
-app.get('/movie/us_box', (req, res) => {
-  var sreq = request.get(HOST + req.originalUrl)
-  sreq.pipe(res)
-  sreq.on('end', (error, res) => {
-    if (error) {
-      console.log(error)
-    }
-    console.log(res)
+  sreq.on('end', function (error, res) {
+    if (error) {}
+    console.log('end')
   })
 })
 /*
@@ -91,10 +59,8 @@ app.get('/movie/subject/:id/photos', (req, res) => {
   var sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
   sreq.on('end', (error, res) => {
-    if (error) {
-      console.log(error)
-    }
-    console.log(res)
+    if (error) {}
+    console.log('end')
   })
 })
 /*
@@ -104,12 +70,11 @@ app.get('/movie/celebrity/:id', (req, res) => {
   var sreq = request.get(HOST + req.originalUrl)
   sreq.pipe(res)
   sreq.on('end', (error, res) => {
-    if (error) {
-      console.log(error)
-    }
-    console.log(res)
+    if (error) {}
+    console.log('end')
   })
 })
-app.listen(process.env.PORT || 8989, function () {
-  console.log('HTTP Server is running in http://127.0.0.1:8989')
+
+app.listen(8081, function () {
+  console.log('HTTP Server is running in http://127.0.0.1:8081')
 })
