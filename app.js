@@ -20,7 +20,9 @@ app.all('*', (req, res, next) => {
   }
 })
 /*
-* type
+* @type in_theaters 正在热映
+* @type coming_soon 即将热映
+* @type top250 排名250
 */
 app.get('/movie/:type', (req, res) => {
   var sreq = request.get(HOST + req.originalUrl)
